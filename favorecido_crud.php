@@ -24,8 +24,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
                 $conexao = new PDO("mysql:host=" . SERVIDOR . ";dbname=" . BANCO, USUARIO, SENHA);
                 $pre = $conexao->prepare($sql);
                 $pre->execute(array(
-                    $registro->nome_favorecido,
-                    
+                    $registro->nome_favorecido
                 ));
                 print json_encode($conexao->lastInsertId());
             } catch (Exception $e) {

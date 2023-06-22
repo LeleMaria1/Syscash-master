@@ -28,7 +28,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-4 d-flex justify-content-start">
-                    <h4>Adicionar Contas a pagar</h4>
+                    <h4>Adicionar Contas a Pagar</h4>
                 </div>
                 <div class="col-md-3 d-flex justify-content-center">
                 </div>
@@ -80,6 +80,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
                             <div class="col-md-6">
                                 <label for="favorecido" class="form-label">Favorecido</label>
                                 <input type="text" class="form-control" id="favorecido_contapagar" name="favorecido_contapagar" maxlength="100">
+                                
                             </div>
                             <div class="col-md-6">
                                 <label for="valor" class="form-label">Valor R$</label>
