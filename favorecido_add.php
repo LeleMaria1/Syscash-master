@@ -68,18 +68,8 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
                     <div class="tab-content" id="tabdados_favorecido">
                         <div class="tab-pane fade show active" id="dados_favorecido" role="tabpanel" aria-labelledby="dados_favorecido">
                             <div class="col-md-6">
-                                <label for="descricao" class="form-label">Descrição</label>
-                                <input type="text" class="form-control" id="descricao_favorecido" name="descricao_favorecido" maxlength="50" autofocus>
-                            </div>
-                            <div class="col-md-6">
-                                <input class="form-check-input" type="radio" name="tipo_favorecido" id="tipo_favorecido" value="1">
-                                <label class="form-check-label" for="tipo_favorecido">
-                                    Entrada
-                                </label>
-                                <input class="form-check-input" type="radio" name="tipo_favorecido" id="tipo_favorecido" value="2">
-                                <label class="form-check-label" for="tipo_favorecido">
-                                    Saída
-                                </label>
+                                <label for="nome" class="form-label">Descrição</label>
+                                <input type="text" class="form-control" id="nome_favorecido" name="nome_favorecido" maxlength="50" autofocus>
                             </div>
                             <input type="hidden" id="id_favorecido" value="<?php echo isset($id) ? $id : '' ?>" />
                             <input type="hidden" id="usuario_id_favorecido" name="usuario_id_favorecido" value="<?php echo isset($usuario_id) ? $usuario_id : '' ?>" />

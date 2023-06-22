@@ -22,10 +22,7 @@ $(document).ready(function () {
 	//configurando validação dos dados digitados no cadastro/edição
 	$("#favorecido_dados").validate({
 		rules: {
-			descricao_favorecido: {
-				required: true
-			},
-			tipo_favorecido: {
+			nome_favorecido: {
 				required: true
 			}
 		},
@@ -45,11 +42,8 @@ $(document).ready(function () {
 			}
 		},
 		messages: {
-			descricao_favorecido: {
+			nome_favorecido: {
 				required: "Este campo não pode ser vazio!"
-			},
-			tipo_favorecido: {
-				required: "Este campo não pode ser vazio!",
 			}
 		}
 	});

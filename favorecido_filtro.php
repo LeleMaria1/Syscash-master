@@ -4,8 +4,8 @@ function validaDados($registro)
 {
     $erros = [];
 
-    if (!filter_var($registro->descricao_favorecido, FILTER_SANITIZE_STRING)) {
-        $erros["descricao_favorecido"] =  "Descrição: Campo vazio e ou informação inválida!";
+    if (!filter_var($registro->nome_favorecido, FILTER_SANITIZE_STRING)) {
+        $erros["nome_favorecido"] =  "Nome: Campo vazio e ou informação inválida!";
     }
 
     if (count($erros) > 0) {
