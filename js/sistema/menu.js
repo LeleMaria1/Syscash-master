@@ -120,6 +120,10 @@ $(document).ready(function () {
         $("#conteudo").load("categoria_index.php");
     });
 
+    $("#favorecido_link").click(function (e) {
+        $("#conteudo").load("favorecido_index.php");
+    });
+
     $("#contapagar_link").click(function (e) {
         $("#conteudo").load("conta_pagar_index.php");
     });
