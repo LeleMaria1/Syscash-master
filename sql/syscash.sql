@@ -51,11 +51,14 @@ INSERT INTO `categoria` (`id`, `descricao`, `tipo`, `usuario_id`, `favorecido_id
 
 CREATE TABLE `conta_pagar` (
   `id` int(11) NOT NULL,
-  `valor` double NOT NULL,
-  `descricao` varchar(45) NOT NULL,
+  `descricao` varchar(100) NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
   `data_vencimento` date NOT NULL,
   `usuario_id` int(11) NOT NULL,
-  `categoria_id` int(11) NOT NULL
+  `categoria_id` int(11) NOT NULL,
+  `categoria_usuario_id` int(11) NOT NULL,
+  `favorecido_id` int(11) NOT NULL,
+  `favorecido_usuario_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
