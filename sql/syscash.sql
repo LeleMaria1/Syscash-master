@@ -17,7 +17,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- -----------------------------------------------------
 -- Schema syscash
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `syscash` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+CREATE SCHEMA IF NOT EXISTS `syscash` DEFAULT CHARACTER SET utf8mb4;
 USE `syscash` ;
 
 -- -----------------------------------------------------
