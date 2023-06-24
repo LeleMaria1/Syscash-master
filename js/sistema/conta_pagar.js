@@ -161,7 +161,7 @@ $(document).ready(function () {
 					pagina_contapagar: $("#pagina_contapagar").val(),
 					texto_busca_contapagar: $("#texto_busca_contapagar").val()
 				}, function () {
-					$("#div_mensagem_texto_contapagar").empty().append("Contas a  cadastrada!");
+					$("#div_mensagem_texto_contapagar").empty().append("Conta a pagar cadastrada!");
 					$("#div_mensagem_contapagar").show();
 				});
 			},
@@ -374,7 +374,7 @@ $(document).ready(function () {
 			},
 			dataType: "json",
 			success: function () {
-				$("#div_mensagem_texto_contapagar").empty().append("Contas a pagar excluída!");
+				$("#div_mensagem_texto_contapagar").empty().append("Conta excluída!");
 				$("#div_mensagem_contapagar").show();
 				$("tr#" + registro.id + "_contapagar").remove();
 			},
