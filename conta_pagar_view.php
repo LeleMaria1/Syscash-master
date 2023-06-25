@@ -12,7 +12,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
         $pagina = filter_input(INPUT_POST, "pagina_contapagar", FILTER_VALIDATE_INT);
         $texto_busca = filter_input(INPUT_POST, "texto_busca_contapagar", FILTER_SANITIZE_STRING);
 
-        $sql = "select * from conta_Pagar where id = ?";
+        $sql = "select * from conta_pagar where id = ?";
 
         $conexao = new PDO("mysql:host=" . SERVIDOR . ";dbname=" . BANCO, USUARIO, SENHA);
 
@@ -25,12 +25,22 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
         if (!$resultado) {
             throw new Exception("Não foi possível realizar a consulta!");
         }
+
+        $select = new PDO("mysql:host=" . SERVIDOR . ";dbname=" . BANCO, USUARIO, SENHA);
+
+        $pro = $select->prepare('SELECT * FROM favorecido WHERE id = ?');
+        $pro->execute(array(
+            $resultado['favorecido']
+        ));
+        $favorecido = $pro->fetch(PDO::FETCH_ASSOC);
+
     } catch (Exception $e) {
         $erros[] = $e->getMessage();
         $_SESSION["erros"] = $erros;
     } finally {
         $conexao = null;
     }
+
 }
 ?>
 <br>
@@ -48,7 +58,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#" title="Home" id="home_index_contapagar"><i class="fas fa-home"></i>
                                     <span>Home</span></a></li>
-                            <li class="breadcrumb-item"><a href="#" title="Contas a Pagar" id="contapagar_index"><i class="fas fa-calendar-plus"></i> <span>Contas a Pagar</span></a></li>
+                            <li class="breadcrumb-item"><a href="#" title="Contas a pagar" id="contapagar_index"><i class="fas fa-calendar-plus"></i> <span>Contas a pagar</span></a></li>
                             <li class="breadcrumb-item active" aria-current="page">Visualizar</li>
                         </ol>
                     </nav>
@@ -97,7 +107,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
                             <dl>
                                 <dt>Favorecido</dt>
                                 <dd>
-                                    <?= isset($resultado["favorecido"]) ? $resultado["favorecido"] : ""; ?>
+                                    <?= isset($favorecido["nome"]) ? $favorecido["nome"] : ""; ?>
                                 </dd>
                             </dl>
                             <dl>

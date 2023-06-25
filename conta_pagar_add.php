@@ -3,6 +3,7 @@ require_once("valida_acesso.php");
 ?>
 <?php
 require_once("categoria_crud.php");
+require_once("favorecido_crud.php");
 
 //a listagem de categoria é geral poderia ser filtrado por status
 if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
@@ -37,7 +38,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#" title="Home" id="home_index_contapagar"><i class="fas fa-home"></i>
                                     <span>Home</span></a></li>
-                            <li class="breadcrumb-item"><a href="#" title="Contas a pagar" id="contapagar_index"><i class="fas fa-calendar-plus"></i> <span>Contas a Pagar</span></a></li>
+                            <li class="breadcrumb-item"><a href="#" title="Contas a  pagar" id="contapagar_index"><i class="fas fa-calendar-plus"></i> <span>Contas a  pagar</span></a></li>
                             <li class="breadcrumb-item active" aria-current="page">Adicionar</li>
                         </ol>
                     </nav>
@@ -79,8 +80,15 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
                             </div>
                             <div class="col-md-6">
                                 <label for="favorecido" class="form-label">Favorecido</label>
-                                <input type="text" class="form-control" id="favorecido_contapagar" name="favorecido_contapagar" maxlength="100">
-                                
+                                <select name="favorecido_contapagar" id="favorecido_contapagar" class="form-select">
+                                    <?php
+                                    $favorecidos = listarFavorecido();
+                                    foreach ($favorecidos as $favorecido) {
+                                        echo "<option value='" . $favorecido["id"] . "'>" . $favorecido["nome"] . "</option>";
+                                    }
+                                    ?>
+                                </select>
+                                <br>
                             </div>
                             <div class="col-md-6">
                                 <label for="valor" class="form-label">Valor R$</label>
