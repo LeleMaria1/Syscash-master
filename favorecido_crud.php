@@ -46,7 +46,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
 
                 $registro = new stdClass();
                 $registro = json_decode($_POST['registro']);
-                validaDados($registro);
+                
 
                 $sql = "update favorecido set nome = ? where id = ? ";
                 $conexao = new PDO("mysql:host=" . SERVIDOR . ";dbname=" . BANCO, USUARIO, SENHA);
