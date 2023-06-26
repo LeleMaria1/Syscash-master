@@ -108,8 +108,7 @@ if (filter_input(INPUT_SERVER, "REQUEST_METHOD") === "POST") {
             &copy; 2021–<script>
                 document.write(new Date().getFullYear())
             </script>
-            | Syscash - O Seu Sistema de Finanças | Alexandre -
-            <a href="https://www.youtube.com/channel/UCUeidwLoy7YK4kEeuq2sPgw" target="_blank">Peregrino de TI</a>
+            | Syscash - O Seu Sistema de Finanças | Laíse e Leticia -
         </p>
     </footer>
 
